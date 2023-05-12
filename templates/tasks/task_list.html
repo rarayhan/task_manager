@@ -1,0 +1,17 @@
+  </h3>
+  <p>{{ task.description }}</p>
+  <p>Category: {{ task.category }}</p>
+  <p>Priority: {{ task.priority }}</p>
+  <p>Deadline: {{ task.deadline }}</p>
+  {% if task.completed %}
+    <p>Status: Completed</p>
+  {% else %}
+    <p>Status: In progress</p>
+  {% endif %}
+  <a href="{% url 'edit_task' task.pk %}">Edit</a>
+  <a href="{% url 'delete_task' task.pk %}">Delete</a>
+  <hr>
+{% empty %}
+  <p>No tasks available.</p>
+{% endfor %}
+<a href="{% url 'create_task' %}">Create Task</a>
