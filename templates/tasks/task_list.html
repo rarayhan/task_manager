@@ -1,4 +1,5 @@
-  </h3>
+{% for task in tasks %}
+  <h3>{{ task.title }}</h3>
   <p>{{ task.description }}</p>
   <p>Category: {{ task.category }}</p>
   <p>Priority: {{ task.priority }}</p>
